@@ -1,0 +1,61 @@
+﻿@model IEnumerable<HybridPlanner.Models.Location>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Locaties</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Straatnaam
+            </th>
+            <th>
+                Huisnummer
+            </th>
+            <th>
+                Postcode
+            </th>
+            <th>
+                Locatie
+            </th>
+            <th>
+                Geschatte Gasten
+            </th>
+            <th>
+                Gekoppeld Feest
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StreetName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StreetNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartyLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GuestEstimate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Party.PartyDescription)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square" style="color:orange"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-square" style="color:green"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-x-square" style="color:red"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

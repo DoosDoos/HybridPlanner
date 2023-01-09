@@ -1,0 +1,82 @@
+﻿*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Century Gothic;    
+}
+
+
+body1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    background: #ffffff; 
+    margin-top: 100px;
+}
+
+.Content-Wrapper {
+    justify-content: center;
+}
+
+.Home-Button {
+    background-color: rgb(232, 50, 131);
+    width: auto;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+}
+
+    .Home-Button:hover {
+        background-color: rgb(180, 39, 102);
+        color: white;
+    }
+
+h2 {
+    position: relative;
+    font-size: 4em;
+    color: #A303A6;
+    /*-webkit-text-stroke: 0.3vw #D90467;*/
+}
+
+    h2::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 100%;
+        overflow: hidden;
+        color: #D90467;
+        -webkit-text-stroke: 0vw #000000;
+        border-right: 2px solid #000000;
+        overflow: hidden;
+        animation: animate 10s infinite;
+    }
+
+@keyframes animate {
+    0% {
+        width: 0%
+    }
+
+    70% {
+        width: 102%
+    }
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    position: center;
+    box-sizing: border-box;
+    font-family: 'Century Gothic';
+}

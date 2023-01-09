@@ -1,0 +1,31 @@
+﻿@model IEnumerable<HybridPlanner.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gebruikers</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                E-mail Adres
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailAdress)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square" style="color:orange"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-square" style="color:green"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-x-square" style="color:red"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,39 @@
+﻿@model HybridPlanner.Models.Party
+
+@{
+    ViewData["Title"] = "Create";
+}
+<head>
+    <link rel="stylesheet" href="~/css/StyleSheet.css"/>
+</head>
+<h1>Feestje Aanmaken</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PartyName" class="control-label">Feest Naam:</label>
+                <input asp-for="PartyName" class="form-control" />
+                <span asp-validation-for="PartyName" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="PartyDescription" class="control-label">Feest Beschrijving:</label>
+                <input asp-for="PartyDescription" class="form-control" />
+                <span asp-validation-for="PartyDescription" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="PartyDate" class="control-label">Wanneer is het feest?</label>
+                <input asp-for="PartyDate" class="form-control" />
+                <span asp-validation-for="PartyDate" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Feest Aanmaken" class="Home-Button" />
+            </div>
+        </form>
+    </div>
+</div>
+

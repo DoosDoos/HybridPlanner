@@ -1,0 +1,43 @@
+﻿@model IEnumerable<HybridPlanner.Models.Party>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Feest Overzicht</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Feest Naam
+            </th>
+            <th>
+                Feest Beschrijving
+            </th>
+            <th>
+                Feest Datum
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartyDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartyDate)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square" style="color:orange"></i></a> |
+                    <a asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-info-square" style="color:green"></i></a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-x-square" style="color:red"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

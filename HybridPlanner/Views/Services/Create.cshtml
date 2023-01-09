@@ -1,0 +1,35 @@
+﻿@model HybridPlanner.Models.Service
+
+@{
+    ViewData["Title"] = "Create";
+}
+<head>
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+</head>
+<h1>Dienst Huren</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ServiceType" class="control-label">Type Dienst</label>
+                <input asp-for="ServiceType" class="form-control" />
+                <span asp-validation-for="ServiceType" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="ServiceType" class="control-label">Welke Dienst?</label>
+                <select asp-for="ServiceType" class="form-control" asp-items="ViewBag.ServiceType"></select>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="PartyId" class="control-label">Welk Feest?</label>
+                <select asp-for="PartyId" class ="form-control" asp-items="ViewBag.PartyId"></select>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Dienst Huren" class="Home-Button" />
+            </div>
+        </form>
+    </div>
+</div>
+

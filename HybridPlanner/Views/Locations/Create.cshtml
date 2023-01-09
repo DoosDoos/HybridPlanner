@@ -1,0 +1,51 @@
+﻿@model HybridPlanner.Models.Location
+
+@{
+    ViewData["Title"] = "Create";
+}
+<head>
+    <link rel="stylesheet" href="~/css/StyleSheet.css"/>
+</head>
+<h1>Locatie Koppelen</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StreetName" class="control-label">Straatnaam</label>
+                <input asp-for="StreetName" class="form-control" />
+                <span asp-validation-for="StreetName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StreetNumber" class="control-label">Huisnummer</label>
+                <input asp-for="StreetNumber" class="form-control" />
+                <span asp-validation-for="StreetNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PostalCode" class="control-label">Postcode</label>
+                <input asp-for="PostalCode" class="form-control" />
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PartyLocation" class="control-label">Locatie</label>
+                <input asp-for="PartyLocation" class="form-control" />
+                <span asp-validation-for="PartyLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GuestEstimate" class="control-label">Aantal Gasten</label>
+                <input asp-for="GuestEstimate" class="form-control" />
+                <span asp-validation-for="GuestEstimate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PartyId" class="control-label">Welk Feest?</label>
+                <select asp-for="PartyId" class ="form-control" asp-items="ViewBag.PartyId"></select>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Locatie Koppelen" class="Home-Button" />
+            </div>
+        </form>
+    </div>
+</div>
+
